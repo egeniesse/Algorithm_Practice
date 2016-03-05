@@ -1,0 +1,25 @@
+{
+  "name": "algorithm_practice",
+  "version": "1.0.0",
+  "description": "practice solving algorithms",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/egeniesse/Algorithm_Practice"
+  },
+  "author": "Eric Geniesse",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "devDependencies": {
+    "mocha-junit-reporter": "^1.9.1"
+  }
+}
