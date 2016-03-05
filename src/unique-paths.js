@@ -10,13 +10,11 @@ var uniquePaths = function (n, m){
   }
   // make a results variable that tracks every unique path
   var results = 0;
-
   // make a subroutine that traverses the matrix using only unused paths
   var traverseMatrix = function (x, y) {
 
     if(x === n-1 && y === m-1){
       results++; // once the base case is reached, increment the counter.
-
     } else {
       if (x < n-1) {
         traverseMatrix(x+1, y);
@@ -26,9 +24,7 @@ var uniquePaths = function (n, m){
       }
     }
   };
-
   traverseMatrix(0,0);
-
   return results;
 };
 
