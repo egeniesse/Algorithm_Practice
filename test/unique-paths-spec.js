@@ -1,7 +1,7 @@
 var mocha = require('mocha');
 var chai = require('chai');
 var expect = chai.expect;
-var uniquePaths = require('../../src/unique-paths.js');
+var uniquePaths = require('../src/unique-paths.js');
 
 describe('The unique paths solution', function(){
 	
