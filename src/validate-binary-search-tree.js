@@ -1,7 +1,5 @@
-var binaryValidate = function(node, isBalanced, rangeLeft, rangeRight) {
+var binaryValidate = function(node, rangeLeft, rangeRight) {
     
-    isBalanced = isBalanced === undefined ? true : isBalanced;
-
     if(rangeLeft){
       if(node.val <= rangeLeft) {
         return false;
@@ -12,29 +10,29 @@ var binaryValidate = function(node, isBalanced, rangeLeft, rangeRight) {
         return false;
       }
     }
-    if(!node || !isBalanced) {
-        return isBalanced;
+    if(!node) {
+        return true;
     } 
     if(node.left) {
       if(node.left.val >= node.val){
           return false;   
       } else {
-          if(!binaryValidate(node.left, isBalanced, rangeLeft, node.val)){
+          if(!binaryValidate(node.left, rangeLeft, node.val)){
             return false;
           }
       }
     } 
     if(node.right) {
       if(node.right.val <= node.val){
-          return false  
+          return false;
       } else {
-          if(!binaryValidate(node.right, isBalanced, node.val, rangeRight)){
+          if(!binaryValidate(node.right, node.val, rangeRight)){
             return false;
           }
       }
     } 
     
-    return isBalanced;
+    return true;
 };
 
 module.exports = binaryValidate;
