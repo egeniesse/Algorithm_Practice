@@ -24,19 +24,20 @@ LRUCache.prototype.CreateNode = function(key, value){
 
 LRUCache.prototype.shiftPointers = function(node){
 
-  if(this.first !== this.last && this.first !== node){
-    if (this.last === node){
-      node.previous.next = null;
-      this.last = node.previous;
-      node.next.previous = node;
-    } else if (this.first !== node) {
-      node.previous.next = node.next;
-      node.next.previous = node.previous;
-      this.first.previous = node;
-    }
+  if (this.last === node && this.first !== this.last){
+    node.previous.next = null;
+    this.last = node.previous;
+    node.previous = null;
     node.next = this.first;
     this.first = node;
+    node.next.previous = node;
+  } else if (this.first !== node && this.first !== this.last) {
+    node.previous.next = node.next;
     node.previous = null;
+    node.next.previous = node.previous;
+    node.next = this.first;
+    this.first.previous = node;
+    this.first = node;
   }
 };
 
